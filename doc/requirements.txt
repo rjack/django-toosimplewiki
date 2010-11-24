@@ -1,0 +1,63 @@
+Requirements for django-toosimplewiki
+=====================================
+
+About this document
+-------------------
+
+Purpose of this document is to state the requirements that toosimplewiki must
+satisfy.
+
+toosimplewiki is a didactic project and doesn't solve any actual problem.
+
+Because of this a lot of things are just imagined. Things that exist just in
+the mind of the author have their terms marked with a _foo-_ prefix.
+
+
+Problem description
+-------------------
+
+There is a foo-need for a collaborative space in which foo-users could share
+foo-knowledge about foo-topics. A wiki is then chosen as desired tool to solve
+this foo-problem.
+
+
+Stakeholders
+------------
+
+* foo-users
+* foo-admins
+
+foo-users must be able to read and write the contents of the wiki.
+
+foo-admins are users that can perform administrative tasks.
+
+
+Foo-users operations
+--------------------
+
+What foo-users must be able to do.
+
+# Basic
+
+* browse the site
+* read an article
+* save a new version of an article
+
+# Advanced
+
+* visualize a preview before saving the new version of the article
+* edit an old version of an article and save it as new (rollback)
+* visualize the changelog of an article
+* visualiza an old version of an article
+* visualize the articles that link to a given article
+* upload a file
+
+Foo-admins operations
+---------------------
+
+A foo-admin must be able to do what users do, and additionally:
+
+* delete an article
+* rename an article
+* lock (prevent further modifications of) an article
+* unlock an article
