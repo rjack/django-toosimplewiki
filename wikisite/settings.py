@@ -1,6 +1,11 @@
 # Django settings for wikisite project.
 
+from os.path import join, dirname
+
+PROJECT_DIR = dirname(__file__)
+
 DEBUG = True
+#DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -12,7 +17,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'wiki.db',               # Or path to database file if using sqlite3.
+        'NAME': join(PROJECT_DIR, 'wiki.db'),   # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
