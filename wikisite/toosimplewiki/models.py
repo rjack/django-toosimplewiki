@@ -11,7 +11,7 @@ class Article(models.Model):
 
 class Revision(models.Model):
 	article = models.ForeignKey(Article, related_name="revisions")
-	timestamp = models.DateTimeField(primary_key=True, default=datetime.now())
+	timestamp = models.DateTimeField(default=datetime.now())
 	content = models.TextField()
 
 	def __unicode__ (self):
