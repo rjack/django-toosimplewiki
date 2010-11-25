@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>All articles</h1>
+
+	<ul>
+	{% for article in object_list %}
+		<li><a href="{% url toosimplewiki_article_detail article_id=article.id %}">{{ article.title }}</a></li>
+	{% endfor %}
+	</ul>
+{% endblock %}
