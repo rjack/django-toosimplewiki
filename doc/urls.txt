@@ -1,0 +1,37 @@
+toosimplewiki urls
+==================
+
+GET urls
+--------
+
+Home Page
+
+	/wiki/
+
+List of articles
+
+	/wiki/all/
+
+A given article (i.e. latest revision)
+
+	/wiki/<article_id>/
+
+Editing form for the given article
+
+	/wiki/<article_id>/edit/
+
+List of revisions of the given article
+
+	/wiki/<article_id>/history/
+
+A given revision of the given article
+
+	/wiki/<article_id>/revision/<revision_id>/
+
+
+POST urls
+---------
+
+Save a new revision of the given article
+
+	/wiki/<article_id>/save/
