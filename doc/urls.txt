@@ -44,7 +44,7 @@ POST urls
 
 Save a new revision of the given article
 
-	/wiki/<article_id>/save/
+	/wiki/<article_id>/
 	if form valid
 		302 redirect to /wiki/<article_id>/
 	else
