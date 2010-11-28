@@ -18,4 +18,8 @@ urlpatterns = patterns('',
 	url(r'^(?P<article_id>\d+)/$',
 		article_detail,
 		name="toosimplewiki_article_detail"),
+
+	url(r'^new/$',
+		new_article,
+		name="toosimplewiki_new_article"),
 )
