@@ -5,7 +5,7 @@ from toosimplewiki.models import Article, Revision
 
 class ArticleForm(forms.ModelForm):
 	class Meta:
-		model = Author
+		model = Article
 
 
 class RevisionForm(forms.ModelForm):

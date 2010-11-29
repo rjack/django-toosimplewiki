@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>New article</h1>
+
+	<form action="{% url toosimplewiki_add_article %}" method="POST">
+		{% csrf_token %}
+		{{ article_form.as_p }}
+		{{ revision_form.as_p }}
+		<input type="submit" value="New article" />
+	</form>
+{% endblock %}

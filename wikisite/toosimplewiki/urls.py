@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 from django.views.generic import simple, list_detail
 from toosimplewiki.models import Article, Revision
-from toosimplewiki.views import article_detail
+from toosimplewiki.views import article_detail, add_article
 
 
 urlpatterns = patterns('',
@@ -20,6 +20,6 @@ urlpatterns = patterns('',
 		name="toosimplewiki_article_detail"),
 
 	url(r'^new/$',
-		new_article,
-		name="toosimplewiki_new_article"),
+		add_article,
+		name="toosimplewiki_add_article"),
 )
