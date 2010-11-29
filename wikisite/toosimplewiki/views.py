@@ -1,6 +1,7 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import render_to_response
 from toosimplewiki.models import Article, Revision
+from toosimplewiki.forms import ArticleForm, RevisionForm
 
 
 def article_detail(request, article_id):
@@ -13,3 +14,12 @@ def article_detail(request, article_id):
 		"article": article,
 		"revision": revision,
 	})
+
+
+# TODO
+# http://bit.ly/gfPFgy
+# http://bit.ly/gOkXdK
+def new_article(request):
+	if request.method == 'POST':
+		article_form = ArticleForm(request.POST)
+		revision_form = RevisionForm(request.POST)
