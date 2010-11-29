@@ -42,6 +42,14 @@ A given revision of the given article
 POST urls
 ---------
 
+Save a new article
+
+	/wiki/new/
+	if form valid
+		302 redirect to /wiki/<article_id>/
+	else
+		400 render editing form
+
 Save a new revision of the given article
 
 	/wiki/<article_id>/
