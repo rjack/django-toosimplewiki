@@ -22,6 +22,9 @@ def article_detail(request, article_id):
 # http://bit.ly/gfPFgy
 # http://bit.ly/gOkXdK
 def add_article(request):
+
+	status_code = 200
+
 	if request.method == "GET":
 		article_form = ArticleForm()
 		revision_form = RevisionForm()
@@ -34,10 +37,19 @@ def add_article(request):
 			new_revision = revision_form.save(commit=False)
 			new_revision.article = new_article
 			new_revision.save()
+			# article and revision added, redirect to newly created article
 			return HttpResponseRedirect(reverse("toosimplewiki_article_detail",
 				args=(new_article.id,)))
+		else:
+			# form is not valid, bad request
+			status_code = 400
 
-	return render_to_response("toosimplewiki/add_article_form.html", {
+	# if GET or submitted form is not valid, render the form
+	response = render_to_response("toosimplewiki/add_article_form.html", {
 		"article_form": article_form,
 		"revision_form": revision_form,
 	}, context_instance=RequestContext(request))
+
+	response.status_code = status_code
+
+	return response
