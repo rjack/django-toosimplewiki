@@ -2,6 +2,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import Context, RequestContext, loader
+from django.views.generic import list_detail
 from toosimplewiki.forms import ArticleForm, RevisionForm
 from toosimplewiki.models import Article, Revision
 
@@ -18,9 +19,36 @@ def article_detail(request, article_id):
 	})
 
 
-# TODO
-# http://bit.ly/gfPFgy
-# http://bit.ly/gOkXdK
+def article_revision_detail(request, article_id, revision_id):
+	try:
+		revision = Revision.objects.get(pk=revision_id)
+	except Revision.DoesNotExist:
+		raise Http404
+
+	article = revision.article
+	return render_to_response("toosimplewiki/article_detail.html", {
+		"article": article,
+		"revision": revision,
+	})
+
+
+
+def article_history(request, article_id):
+	try:
+		article = Article.objects.get(pk=article_id)
+	except Article.DoesNotExist:
+		raise Http404
+
+	return list_detail.object_list(
+		request,
+		queryset = Revision.objects.filter(article=article),
+		template_name = "toosimplewiki/article_history.html",
+		extra_context = {
+			"article": article
+		},
+	)
+
+
 def add_article(request):
 
 	status_code = 200
