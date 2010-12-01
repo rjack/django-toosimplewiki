@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1><em>{{ article.title }}</em> past revisions</h1>
+
+	<ul>
+		{% for revision in object_list %}
+		<li><a href="{% url toosimplewiki_article_revision_detail article.id revision.id%}">{{ revision.timestamp }}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}
