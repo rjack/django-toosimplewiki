@@ -8,4 +8,6 @@
 		<li><a href="{% url toosimplewiki_article_detail article_id=article.id %}">{{ article.title }}</a></li>
 	{% endfor %}
 	</ul>
+
+	<p>Add a <a href="{% url toosimplewiki_add_article %}">new article</a></p>
 {% endblock %}
