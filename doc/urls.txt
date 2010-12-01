@@ -7,36 +7,43 @@ GET urls
 Home Page
 
 	/wiki/
+	render home page
 
 List of articles
 
 	/wiki/all/
+	render list of articles
 
 A given article (i.e. latest revision)
 
 	/wiki/<article_id>/
 	if article exists
-		200 render latest revision
+	    200 render latest revision
 	else
-		404 article
+	    404 article
 
 Editing form for the given article
 
 	/wiki/<article_id>/edit/
+	render editing form with containing the article
 
 List of revisions of the given article
 
 	/wiki/<article_id>/history/
+	if article doesn't exists
+	    404 article
+	else
+	    render a list of revision of the given article
 
 A given revision of the given article
 
 	/wiki/<article_id>/revision/<revision_id>/
 	if article doesn't exist
-		404 article
+	    404 article
 	elif revision doesn't exist
-		404 revision
+	    404 revision
 	else
-		200 render revision
+	    200 render revision
 
 
 POST urls
