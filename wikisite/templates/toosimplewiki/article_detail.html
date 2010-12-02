@@ -3,5 +3,12 @@
 {% block content %}
 	<h1>{{ article.title }}</h1>
 
-	<div>{{ revision.content }}</div>
+	<ul class="article controls">
+		<li><a href="{% url toosimplewiki_article_history article_id=article.id %}">history</a></li>
+		{% comment %}
+			<li><a href="{% url toosimplewiki_edit_article article_id=article.id %}">edit</a></li>
+		{% endcomment %}
+	</ul>
+
+	<article>{{ revision.content }}</article>
 {% endblock %}
