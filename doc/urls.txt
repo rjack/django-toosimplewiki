@@ -25,7 +25,7 @@ A given article (i.e. latest revision)
 Editing form for the given article
 
 	/wiki/<article_id>/edit/
-	render editing form with containing the article
+	render editing form with article contents
 
 List of revisions of the given article
 
